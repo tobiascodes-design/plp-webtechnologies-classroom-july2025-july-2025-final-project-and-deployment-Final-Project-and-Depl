@@ -1,0 +1,233 @@
+:root {
+  --primary-color: #0077ff;
+  --secondary-color: #005bb5;
+  --background-color: #f4f4f4;
+  --text-color: #333;
+  --header-color: #fff;
+  --header-background: linear-gradient(90deg, #6a11cb, #2575fc);
+  --font-family: 'Times New Roman', Times, serif,Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family:var(--font-family);
+  line-height: 1.6;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  transition: var(--background-color) 0.3s ease, var(--text-color) 0.3s ease;
+}
+
+header {
+  background: var(--header-background);
+  color: var(--header-color);
+  padding: 10px 20px;
+}
+
+body.dark-mode {
+  --background-color: #121212;
+  --text-color: #f1f1f1;
+  --header-color: #f1f1f1;
+  --header-background: linear-gradient(90deg, #232526, #414345);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  font-family:'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  animation: fadeIn 1s ease-in-out; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.hero h2 span {
+  color: #0077ff;
+}
+.logo {
+  font-size: 1.9rem;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+.logo:hover {
+  color: #ffcc00;
+}
+
+.btn {
+  background: #0077ff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  margin-top: 20px;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 5px;
+  transition:all 0.3s ease-in-out ;
+  box-shadow:0 4px 6px rgba(0,0,0,0.1); 
+}
+.btn:hover {
+  background: #0056cc;
+  transform: translateY(-2px);
+  box-shadow:0 8px 16px rgba(0,0,0,0.2);
+}
+
+section {
+  padding: 40px 20px;
+}
+
+.skills, .project-grid {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  flex: 1 1 calc(30% - 10px);
+}
+.project-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+  transition: all 0.7s ease-in-out;
+  background: #80227e;
+}
+
+form input, form textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+form button {
+  width: 100%;
+}
+form button:hover {
+  background: #005bb5;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -15px;
+  top: 0;
+  width: 35px;
+  height: 35px;
+  background: #0077ff;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px #0077ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+}
+
+.skills{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  list-style: none;
+  gap: 10px;
+  padding: 0;
+}
+.skills li {
+  background: #bea7a7;
+  padding: 7px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.skills li:hover {
+  background:#80227e;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+  transition: all 0.7s ease-in-out;
+}
+
+/* Keyframes for bounce-in */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animate icons inside timeline dots */
+.timeline-dot i {
+  animation: none; /* default (no animation) */
+}
+
+.timeline-dot i.active {
+  animation: bounceIn 0.8s ease forwards;
+}
+
+.footer {
+  background: #121212;        /* dark footer */
+  color: #f1f1f1;             /* light text */
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+.footer .social-links {
+  margin-top: 10px;
+}
+
+.footer .social-links a {
+  color: #0077ff;             /* your theme blue */
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer .social-links a:hover {
+  color: #00ccff;             /* lighter blue hover */
+}
+
